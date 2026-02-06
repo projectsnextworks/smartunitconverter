@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Unit Converter</title><!-- TITLE OF THE WEBPAGE -->
+    <link rel="stylesheet" href="style.css"> <!-- LINKING CSS FILE -->
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR START ================= -->
+    <header class="topbar"> <!-- TOP NAVIGATION BAR -->
+        <div class="logo">🔄 Smart Converter</div>
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('converter')">Converters</a>
+            <a href="#" onclick="showPage('about')">About</a>
+        </nav>
+    </header>
+    <!-- ================= TOP BAR END ================= -->
+
+    <!-- ================= HOME PAGE START ================= -->
+
+    <section id="home" class="page active"><!-- HOME PAGE SECTION -->
+        <h1>World-Class Unit Converter</h1>
+        <p>Fast • Accurate • User Friendly</p>
+    </section>
+
+    <!-- ================= HOME PAGE START ================= -->
+
+    <!-- ================= CONVERTER PAGE SETUP START================= -->
+
+    <section id="converter" class="page"> <!-- CONVERTER PAGE SECTION -->
+
+        <div class="converter-layout">
+
+            <!-- LEFT SIDE CATEGORIES -->
+            <aside class="categories">
+                <div class="cat active" onclick="openConverter('length', this)">📏 Length</div>
+                <div class="cat" onclick="openConverter('weight', this)">⚖ Weight</div>
+            </aside>
+
+            <!-- RIGHT SIDE PANEL -->
+            <main class="panel">
+
+                <!-- ========== LENGTH UNIT SETUP START ========= -->
+                <div id="length" class="converter-panel active">
+                    <h2>📏 Length Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+                    <div class="converter-bar">
+                        <input type="number" id="lengthInput" class="converter-input" placeholder="Enter value">
+
+                        <!-- LENGTH SELECTION BAR -->
+                        <select id="lengthFrom" class="converter-select" onchange="updateTargets('length')">
+                            <option value="m" selected>Meter (m)</option>
+                            <option value="cm">Centimeter (cm)</option>
+                            <option value="mm">Millimeter (mm)</option>
+                            <option value="km">Kilometer (km)</option>
+                            <option value="in">Inch</option>
+                            <option value="ft">Foot</option>
+                            <option value="yd">Yard</option>
+                            <option value="mi">Mile</option>
+                            <option value="um">Micrometer (µm)</option>
+                            <option value="nm">Nanometer (nm)</option>
+                        </select>
+                    </div>
+
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="lengthTargets"></div>
+
+
+                    <!-- SHOWS RESULT -->
+                    <div id="lengthResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('length')">📋 Copy</button>
+
+                </div>
+                <!-- ========== LENGTH UNIT SETUP START ========= -->
+
+                <!------- WEIGHT UNIT SETUP START --------->
+                <div id="weight" class="converter-panel">
+
+                    <h2>⚖ Weight Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+                    <div class="converter-bar">
+                        <input type="number" id="weightInput" class="converter-input" placeholder="Enter value">
+
+
+                        <!-- WEIGHT SELECTION BAR -->
+                        <!-- <select id="weightFrom" class="converter-select" onchange="updateWeightTargets()"> --->
+
+                        <select id="weightFrom" class="converter-select" onchange="updateTargets('weight')">
+                            <!---- yhn value add hogi new unit ki jo bh add hoga  -->
+                            <option value="kg" selected>Kilogram (kg)</option>
+                            <option value="g">Gram (g)</option>
+                            <option value="mg">Milligram (mg)</option>
+                            <option value="t">Metric Ton (ton)</option>
+                            <option value="st">Stone (st)</option>
+                            <option value="cwt">Hundredweight (cwt)</option>
+                            <option value="lb">Pound (lb)</option>
+                            <option value="oz">Ounce (oz)</option>
+                        </select>
+                    </div>
+                    <!-- WEIGHT TARGET BUTTONS -->
+                    <div class="targets" id="weightTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="weightResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('weight')">📋 Copy</button>
+
+
+                </div>
+                <!------- WEIGHT UNIT SETUP END --------->
+
+            </main>
+        </div>
+    </section>
+    <!-- ================= CONVERTER PAGE SETUP END ================= -->
+
+    <!-- ================= ABOUT PAGE SETUP START ================= -->
+    <section id="about" class="page">
+        <h2>About</h2>
+        <p>All conversions follow international SI standards.</p>
+    </section>
+    <!-- ================= ABOUT PAGE SETUP START ================= -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script> <!-- LINKING JAVASCRIPT FILE -->
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+/* ================= GLOBAL STYLES SETUP START ================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #1976d2;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* PAGES NAV LINKS */
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* HOVER EFFECT */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* MAIN CONTENT AREA */
+main {
+    padding: 20px;
+}
+
+/* PAGE SYSTEM */
+.page {
+    display: none;
+    padding: 20px;
+}
+
+/* SHOW ACTIVE PAGE */
+.page.active {
+    display: block;
+}
+
+/* ================= GLOBAL STYLES SETUP END ================= */
+
+/* ========================= CONVERTER LAYOUT START ========================= */
+/* CONVERTER LAYOUT KO FLEXBOX BANANA  */
+/* important */
+/* LAYOUT */
+.converter-layout {
+    display: flex;
+    gap: 20px;
+}
+
+/* LEFT MENU AND PANEL KO ALIGN KARNA  */
+/* LEFT MENU */
+.categories {
+    width: 200px;
+}
+
+/* CATEGORY ITEMS */
+.cat {
+    padding: 12px;
+    background: #333;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* ACTIVE CATEGORY */
+.cat.active {
+    background: #ff9800;
+}
+
+/* HOVER EFFECT */
+.cat:hover {
+    background: #00c2ff;
+}
+
+/* RIGHT SIDE PANEL KO STYLE KARNA  */
+.panel {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* HIDE INACTIVE CONVERTER PANELS */
+.converter-panel {
+    display: none;
+}
+
+/* SHOW ACTIVE CONVERTER PANEL */
+.converter-panel.active {
+    display: block;
+}
+
+/* INPUTS  means value bar ur conversion bar*/
+/* REMOVE NUMBER INPUT ARROWS */
+/* Chrome, Edge, Safari */
+.converter-input::-webkit-outer-spin-button,
+.converter-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.converter-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ====== TARGET BUTTONS STYLE KARNA ======= */
+
+.targets {
+    width: 40%;
+    /* same as input/select */
+    display: flex;
+    flex-wrap: wrap;
+    /* 🔑 multi-row allow */
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* button responsive karna  */
+.target-btn {
+    flex: 1 1 45%;
+    /* 🔑 2 buttons per row */
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+/* HOVER EFFECT */
+.target-btn:hover {
+    background: #00c2ff;
+    color: #000;
+}
+
+.copy-btn {
+    margin-top: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #1976d2;
+    color: white;
+    font-size: 14px;
+}
+
+.copy-btn:hover {
+    background: #125aa3;
+}
+
+/* RESPONSIVE DESIGN FOR SMALL SCREENS */
+
+@media (max-width: 600px) {
+    .targets {
+        width: 100%;
+    }
+
+    /* buttons full width karna  */
+    .target-btn {
+        flex: 1 1 100%;
+    }
+}
+
+/* ========================= CONVERTER LAYOUT END ========================= */
+
+/* ========================= CONVERTER BAR (INPUT AREA) ========================= */
+/* converter bar ko style karna  */
+
+.converter-bar {
+
+    /* important */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    /* jo aap ne kaha */
+    margin-bottom: 12px;
+
+}
+
+
+/* INPUTS AND SELECTS ky display properties ko set karny kyliy*/
+/* common styles for input and select */
+.converter-input,
+.converter-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #fff;
+    color: #5e5c5c;
+    box-sizing: border-box;
+
+}
+
+/* REMOVE DEFAULT SELECT ARROW */
+
+.converter-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #111;
+    color: #fff;
+
+    /* arrow space */
+    padding-right: 40px;
+
+    /* custom arrow */
+    /* white color svg arrow */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    /* position arrow */
+    background-position: right 14px center;
+    /* size arrow */
+    background-size: 14px;
+}
+
+/* HOVER EFFECTS */
+.converter-select:hover {
+    border-color: #00c2ff;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+.button-group button {
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* =====RESULT Pannel ======= final answer  */
+
+.result {
+    width: 40%;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    border-left: 4px solid #1976d2;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #0d47a1;
+
+    text-align: left;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* HIDE RESULT WHEN EMPTY */
+
+.result:empty {
+    display: none;
+}
+
+/* RESPONSIVE DESIGN FOR SMALL SCREENS */
+
+@media (max-width: 600px) {
+    .result {
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+.result {
+    animation: fadeIn 0.3s ease;
+}
+
+/* FADE IN ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #323232;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .toast {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    .toast.show {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ========================= CONVERTER BAR  ENDS (INPUT AREA) ========================= */
