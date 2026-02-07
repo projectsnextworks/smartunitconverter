@@ -37,8 +37,22 @@
 
             <!-- LEFT SIDE CATEGORIES -->
             <aside class="categories">
+                <!-- new class yhn add hogi  -->
                 <div class="cat active" onclick="openConverter('length', this)">📏 Length</div>
                 <div class="cat" onclick="openConverter('weight', this)">⚖ Weight</div>
+                <div class="cat" onclick="openConverter('temp', this)">🌡Temperature</div>
+                <div class="cat" onclick="openConverter('time', this)">⏱ Time</div>
+                <div class="cat" onclick="openConverter('speed', this)">🚀 Speed</div>
+                <div class="cat" onclick="openConverter('area', this)">📐 Area</div>
+                <div class="cat" onclick="openConverter('volume', this)">💧 Volume</div>
+                <div class="cat" onclick="openConverter('data', this)">💾 Data</div>
+                <div class="cat" onclick="openConverter('energy', this)">⚡ Energy</div>
+                <div class="cat" onclick="openConverter('pressure', this)">🔊 Pressure</div>
+                <div class="cat" onclick="openConverter('power', this)">🔌 Power</div>
+                <div class="cat" onclick="openConverter('density', this)">🧪 Density</div>
+                <div class="cat" onclick="openConverter('angle', this)">📊 Angle</div>
+                <div class="cat" onclick="openConverter('luminance', this)">💡 Luminance</div>
+
             </aside>
 
             <!-- RIGHT SIDE PANEL -->
@@ -49,10 +63,15 @@
                     <h2>📏 Length Converter</h2>
 
                     <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
-                    <div class="converter-bar">
-                        <input type="number" id="lengthInput" class="converter-input" placeholder="Enter value">
 
-                        <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="lengthInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
                         <select id="lengthFrom" class="converter-select" onchange="updateTargets('length')">
                             <option value="m" selected>Meter (m)</option>
                             <option value="cm">Centimeter (cm)</option>
@@ -65,8 +84,14 @@
                             <option value="um">Micrometer (µm)</option>
                             <option value="nm">Nanometer (nm)</option>
                         </select>
+
+
                     </div>
 
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
 
                     <!-- LENGTH TARGET BUTTONS -->
 
@@ -76,9 +101,8 @@
                     <!-- SHOWS RESULT -->
                     <div id="lengthResult" class="result"></div>
                     <button class="copy-btn" onclick="copyResult('length')">📋 Copy</button>
-
                 </div>
-                <!-- ========== LENGTH UNIT SETUP START ========= -->
+                <!-- ========== LENGTH UNIT SETUP ENDS ========= -->
 
                 <!------- WEIGHT UNIT SETUP START --------->
                 <div id="weight" class="converter-panel">
@@ -86,13 +110,16 @@
                     <h2>⚖ Weight Converter</h2>
 
                     <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
-                    <div class="converter-bar">
-                        <input type="number" id="weightInput" class="converter-input" placeholder="Enter value">
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="weightInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
 
+                    <!-- WEIGHT SELECTION BAR -->
+                    <!-- <select id="weightFrom" class="converter-select" onchange="updateWeightTargets()"> --->
 
-                        <!-- WEIGHT SELECTION BAR -->
-                        <!-- <select id="weightFrom" class="converter-select" onchange="updateWeightTargets()"> --->
-
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
                         <select id="weightFrom" class="converter-select" onchange="updateTargets('weight')">
                             <!---- yhn value add hogi new unit ki jo bh add hoga  -->
                             <option value="kg" selected>Kilogram (kg)</option>
@@ -105,6 +132,12 @@
                             <option value="oz">Ounce (oz)</option>
                         </select>
                     </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
                     <!-- WEIGHT TARGET BUTTONS -->
                     <div class="targets" id="weightTargets"></div>
 
@@ -116,6 +149,499 @@
                 </div>
                 <!------- WEIGHT UNIT SETUP END --------->
 
+                <!------- TEMPERATURE UNIT SETUP START --------->
+                <div id="temp" class="converter-panel">
+
+                    <h2>🌡 Temperature Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="tempInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- TEMP SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="tempFrom" class="converter-select" onchange="updateTargets('temp')">
+                            <!---- yhn value add hogi new unit ki jo bh add hoga  -->
+                            <option value="C" selected>Celsius (°C)</option>
+                            <option value="F">Farenhit (°F)</option>
+                            <option value="k">Kelvin (k)</option>
+
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- WEIGHT TARGET BUTTONS -->
+                    <div class="targets" id="tempTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="tempResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('temp')">📋 Copy</button>
+                </div>
+                <!------- TEMPERATURE UNIT SETUP END --------->
+
+                <!-- ========== TIME UNIT SETUP START ========= -->
+                <div id="time" class="converter-panel">
+                    <h2>⏱ Time Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="timeInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="timeFrom" class="converter-select" onchange="updateTargets('time')">
+                            <option value="s" selected>Second (s)</option>
+                            <option value="ms">Millisecond (ms)</option>
+                            <option value="min">Minutes (min)</option>
+                            <option value="h">Hours (h)</option>
+                            <option value="Day">day</option>
+                            <option value="Week">week</option>
+                            <option value="Month">month</option>
+                            <option value="Year">year</option>
+                        </select>
+
+
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="timeTargets"></div>
+
+
+                    <!-- SHOWS RESULT -->
+                    <div id="timeResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('time')">📋 Copy</button>
+                </div>
+                <!-- ========== TIME UNIT SETUP ENDS ========= -->
+
+                <!-- ========== SPEED UNIT SETUP START ========= -->
+                <div id="speed" class="converter-panel">
+                    <h2>🚀 Speed Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="speedInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="speedFrom" class="converter-select" onchange="updateTargets('speed')">
+                            <option value="mps" selected>Meter Per Second (mps)</option>
+                            <option value="kmph">KilloMeter Per Hour (kmph)</option>
+                            <option value="mph">Meter Per Hour (mph)</option>
+                            <option value="fps">Feet Per Second (fps)</option>
+                            <option value="knot">Knot</option>
+                        </select>
+
+
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="speedTargets"></div>
+
+
+                    <!-- SHOWS RESULT -->
+                    <div id="speedResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('speed')">📋 Copy</button>
+                </div>
+                <!-- ========== SPEED UNIT SETUP ENDS ========= -->
+
+                <!-- ========== AREA UNIT SETUP START ========= -->
+                <div id="area" class="converter-panel">
+                    <h2>📐 Area Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="areaInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="areaFrom" class="converter-select" onchange="updateTargets('area')">
+                            <option value="sqm" selected>Square Meter (m²)</option>
+                            <option value="sqcm" selected>Square Centi Meter (cm²)</option>
+                            <option value="sqmm" selected>Square Milli Meter (mm²)</option>
+                            <option value="sqkm">Square Kilometer (km²)</option>
+                            <option value="sqft">Square Feet (ft²)</option>
+                            <option value="sqyd">Square Yard (yd²)</option>
+                            <option value="acre">Acre</option>
+                            <option value="hectare">Hectare</option>
+
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="areaTargets"></div>
+
+
+                    <!-- SHOWS RESULT -->
+                    <div id="areaResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('area')">📋 Copy</button>
+                </div>
+                <!-- ========== AREA UNIT SETUP ENDS ========= -->
+
+                <!-- ========== VOLUME UNIT SETUP START ========= -->
+                <div id="volume" class="converter-panel">
+                    <h2>💧 Volume Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="volumeInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="volumeFrom" class="converter-select" onchange="updateTargets('volume')">
+                            <option value="l" selected>Liter (l)</option>
+                            <option value="ml">Milliliter (ml)</option>
+                            <option value="m3">Cubic Meter (m³)</option>
+                            <option value="cm3">Cubic Centi Meter (m³)</option>
+                            <option value="ft3">Cubic Feet (ft³)</option>
+                            <option value="in3">Cubic Inch (in³)</option>
+                            <option value="gallon">Gallon</option>
+                            <option value="quart">Quart</option>
+                            <option value="pint">Pint</option>
+                            <option value="cup">Pint</option>
+                        </select>
+
+
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="volumeTargets"></div>
+
+
+                    <!-- SHOWS RESULT -->
+                    <div id="volumeResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('volume')">📋 Copy</button>
+
+                </div>
+                <!-- ========== VOLUME UNIT SETUP ENDS ========= -->
+
+                <!-- ========== DATA UNIT SETUP START ========= -->
+                <div id="data" class="converter-panel">
+                    <h2>💾 Data Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="dataInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="dataFrom" class="converter-select" onchange="updateTargets('data')">
+                            <option value="bit" selected>Bit (b)</option>
+                            <option value="byte">Byte (B)</option>
+                            <option value="kb">Kilobit (kb)</option>
+                            <option value="kib">Kilobyte (kB)</option>
+                            <option value="mb">Megabit (Mb)</option>
+                            <option value="mib">Megabyte (MB)</option>
+                            <option value="gb">Gigabit (Gb)</option>
+                            <option value="gib">Gigabyte (GB)</option>
+                            <option value="tb">Terabit (Tb)</option>
+                            <option value="tib">Terabyte (TB)</option>
+
+
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="dataTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="dataResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('data')">📋 Copy</button>
+                </div>
+                <!-- ========== DATA UNIT SETUP ENDS ========= -->
+
+                <!-- ========== ENERGY UNIT SETUP START ========= -->
+                <div id="energy" class="converter-panel">
+                    <h2>⚡ Energy Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="energyInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="energyFrom" class="converter-select" onchange="updateTargets('energy')">
+                            <option value="j" selected>Joule (J)</option>
+                            <option value="kj">Kilojoule (kJ)</option>
+                            <option value="cal">Calorie (cal)</option>
+                            <option value="kcal">Kilocalorie (kcal)</option>
+                            <option value="ev">Electronvolt (eV)</option>
+                            <option value="wh">Watt-hour (Wh)</option>
+                            <option value="kwh">Kilowatt-hour (kWh)</option>
+                            <option value="btu">British Thermal Unit (BTU)</option>
+                            <option value="ftlb">Foot-pound (ft-lb)</option>
+
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="energyTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="energyResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('energy')">📋 Copy</button>
+                </div>
+                <!-- ========== ENERGY UNIT SETUP ENDS ========= -->
+
+                <!-- ========== PRESSURE UNIT SETUP START ========= -->
+                <div id="pressure" class="converter-panel">
+                    <h2>🔊 Pressure Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="pressureInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="pressureFrom" class="converter-select" onchange="updateTargets('pressure')">
+                            <option value="pa" selected>Pascal (Pa)</option>
+                            <option value="kpa">Kilopascal (kPa)</option>
+                            <option value="mpa">Megapascal (MPa)</option>
+                            <option value="bar">Bar</option>
+                            <option value="psi">Pound per Square Inch (psi)</option>
+                            <option value="atm">Atmosphere (atm)</option>
+                            <option value="mmhg">Millimeter of Mercury (mmHg)</option>
+                            <option value="inhg">Inch of Mercury (inhg)</option>
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="pressureTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="pressureResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('pressure')">📋 Copy</button>
+                </div>
+                <!-- ========== PRESSURE UNIT SETUP ENDS ========= -->
+
+
+                <!-- ========== POWER UNIT SETUP START ========= -->
+                <div id="power" class="converter-panel">
+                    <h2>🔌 Power Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="powerInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="powerFrom" class="converter-select" onchange="updateTargets('power')">
+                            <option value="w" selected>Watt (W)</option>
+                            <option value="kw">Kilowatt (kW)</option>
+                            <option value="mw">Megawatt (MW)</option>
+                            <option value="hp">Horsepower (hp)</option>
+                            <option value="btu_h">BTU per Hour (BTU/h)</option>
+                            <option value="cal_s">Calorie per Second (cal/s)</option>
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="powerTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="powerResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('power')">📋 Copy</button>
+                </div>
+                <!-- ========== POWER UNIT SETUP ENDS ========= -->
+
+                <!-- ========== DENSITY UNIT SETUP START ========= -->
+                <div id="density" class="converter-panel">
+                    <h2>🧪 Density Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="densityInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="densityFrom" class="converter-select" onchange="updateTargets('density')">
+                            <option value="kgm3" selected>Kilogram per Cubic Meter (kg/m³)</option>
+                            <option value="gcm3">Gram per Cubic Centimeter (g/cm³)</option>
+                            <option value="lbft3">Pound per Cubic Feet (lb/ft³)</option>
+                            <option value="lbgal">Pound per Gallon (lb/gal)</option>
+                            <option value="oz_in3">Ounce per Cubic Inch (oz/in³)</option>
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="densityTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="densityResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('density')">📋 Copy</button>
+                </div>
+                <!-- ========== DENSITY UNIT SETUP ENDS ========= -->
+
+                <!-- ========== ANGLE UNIT SETUP START ========= -->
+                <div id="angle" class="converter-panel">
+                    <h2>📊 Angle Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="angleInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="angleFrom" class="converter-select" onchange="updateTargets('angle')">
+                            <option value="deg" selected>Degree (°)</option>
+                            <option value="rad">Radian (rad)</option>
+                            <option value="grad">Gradian (gon)</option>
+                            <option value="arcmin">Arcminute (′)</option>
+                            <option value="arcsec">Arcsecond (″)</option>
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="angleTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="angleResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('angle')">📋 Copy</button>
+                </div>
+                <!-- ========== ANGLE UNIT SETUP ENDS ========= -->
+
+                <!-- ========== LUMINANCE UNIT SETUP START ========= -->
+                <div id="luminance" class="converter-panel">
+                    <h2>💡 Luminance Converter</h2>
+
+                    <!-- INPUT + UNIT (SINGLE CONTROL BAR) -->
+
+                    <div class="field-group">
+                        <span class="field-label">Enter value</span>
+                        <input type="number" id="luminanceInput" class="converter-input" placeholder="e.g. 10">
+                    </div>
+
+                    <!-- LENGTH SELECTION BAR -->
+                    <div class="field-group">
+                        <span class="field-label">Select unit</span>
+                        <select id="luminanceFrom" class="converter-select" onchange="updateTargets('luminance')">
+                            <option value="cd_m2" selected>Candela per Square Meter (cd/m²)</option>
+                            <option value="nit">Nit</option>
+                            <option value="stilb">Stilb</option>
+                            <option value="lambert">Lambert</option>
+                        </select>
+                    </div>
+
+                    <!-- HINT TO USER -->
+                    <div class="hint">
+                        Click a conversion button below 👇
+                    </div>
+
+                    <!-- LENGTH TARGET BUTTONS -->
+
+                    <div class="targets" id="luminanceTargets"></div>
+
+                    <!-- SHOWS RESULT -->
+                    <div id="luminanceResult" class="result"></div>
+                    <button class="copy-btn" onclick="copyResult('luminance')">📋 Copy</button>
+                </div>
+                <!-- ========== LUMINANCE UNIT SETUP ENDS ========= -->
             </main>
         </div>
     </section>

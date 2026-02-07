@@ -175,18 +175,28 @@ main {
 /* ========================= CONVERTER BAR (INPUT AREA) ========================= */
 /* converter bar ko style karna  */
 
-.converter-bar {
 
-    /* important */
+
+.field-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 40%;
     /* jo aap ne kaha */
     margin-bottom: 12px;
-
 }
 
+.field-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+}
+
+.hint {
+    font-size: 13px;
+    color: #888;
+    margin: 6px 0;
+}
 
 /* INPUTS AND SELECTS ky display properties ko set karny kyliy*/
 /* common styles for input and select */
@@ -291,6 +301,7 @@ main {
     }
 }
 
+/* TOAST NOTIFICATION STYLE */
 .toast {
     position: fixed;
     bottom: 30px;
@@ -306,11 +317,13 @@ main {
     z-index: 9999;
 }
 
+/* SHOW TOAST */
 .toast.show {
     opacity: 1;
     transform: translateY(-10px);
 }
 
+/* RESPONSIVE DESIGN FOR TOAST ON SMALL SCREENS */
 @media (max-width: 768px) {
     .toast {
         left: 50%;
