@@ -4,24 +4,16 @@
 
 // page show karne ka function
 function showPage(id) {
+    document.querySelectorAll('.page').forEach(p =>
+        p.classList.remove('active')
+    );
 
-    // 1️⃣ sab pages hide
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-    });
-
-    // 2️⃣ target page show
-    const targetPage = document.getElementById(id);
-    if (!targetPage) return;
-
-    targetPage.classList.add('active');
-
-    // 3️⃣ 🔥 SIRF isi page ke units banao
-    updateTargets(id);
-
-    // 4️⃣ optional: old result clear
-    clearResult(id);
+    const target = document.getElementById(id);
+    if (target) {
+        target.classList.add('active');
+    }
 }
+
 
 // old result clear karne ka function (optional, UX ke liye)
 function clearResult(type) {
@@ -322,9 +314,23 @@ function convert(type, toUnit) {
 
 
 /* ========================= INITIAL SETUP ========================= */
-document.addEventListener("DOMContentLoaded", function () {
-    showPage("length");   // default page
-});
+window.onload = () => {
+    updateTargets("weight");
+    updateTargets("length");
+    updateTargets("temp");
+    updateTargets("time");
+    updateTargets("speed");
+    updateTargets("area");
+    updateTargets("volume");
+    updateTargets("data");
+    updateTargets("energy");
+    updateTargets("pressure");
+    updateTargets("power");
+    updateTargets("density");
+    updateTargets("angle");
+    updateTargets("luminance");
+
+};
 
 
 
